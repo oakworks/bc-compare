@@ -3,9 +3,7 @@
  */
 
 import $ from 'jquery';
-import _ from 'lodash';
-import trend from 'jquery-trend';
-import revealer from 'jquery-revealer';
+import template from 'lodash-es/template';
 import EventEmitter from 'eventemitter2';
 
 export default class ProductCompare extends EventEmitter {
@@ -15,7 +13,7 @@ export default class ProductCompare extends EventEmitter {
     this.options = $.extend({
       scope: '[data-product-compare]',
       maxItems: 4,
-      itemTemplate: _.template(`
+      itemTemplate: template(`
         <div class="compare-item" data-compare-item>
           <a href="<%= url %>">
             <img class="compare-item-thumbnail" src="<%= thumbnail %>"/>
